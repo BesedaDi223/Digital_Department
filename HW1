@@ -1,0 +1,68 @@
+#task1
+a=float(input())
+if a < 15.5:
+  print('Тепло')
+elif a > 28:
+  print('Жарко')
+else: print('Нормально')
+
+#task2
+n=int(input())
+answer='НЕТ'
+for i in range(n):
+  stroka=input()
+  if 'кот' in stroka.lower():
+    answer='МЯУ'
+print(answer)
+
+#task3
+word=input()
+word_l=word
+word_s=word
+z=0
+while word!='стоп':
+  if len(word) > len(word_l):
+    word_l=word
+  if len(word) < len(word_s):
+    word_s=word
+  word=input()
+for i in word_s:
+  if i in word_l:
+    z +=1
+if z==len(word_s):
+  print('ДА')
+else: print('НЕТ')
+
+#task4
+n=int(input())
+spisok=list()
+for i in range(n):
+  buy=input()
+  spisok.append(buy)
+for j in spisok:
+  print(j)
+
+#task5
+stroka=input()
+new_stroka=''
+for i in stroka:
+  new_stroka += i*2
+print(new_stroka)
+
+#task6
+def greet():
+  name=input()
+  surname=input()
+  print('Здравствуйте,', name, surname)
+
+greet()
+
+#task7
+class LittleBell:
+  def sound():
+    print('ding')
+
+#task8
+"""
+Изучала программирование на Python на 1-2 курсах университета, знаю основы. Было интересно проверить, что помню.
+"""
