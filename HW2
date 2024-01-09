@@ -1,0 +1,66 @@
+#Task1
+n=int(input())
+lst = list()
+for i in range(n):
+  z=int(input())
+  lst.append(z)
+lst.sort(reverse=True)
+for j in lst:
+  print(j)
+
+#Task2
+n=int(input())
+lst=list()
+for i in range(n):
+  z=input()
+  if z[0:3]!='###':
+    z = z.replace('%%', '')
+    lst.append(z)
+for j in lst:
+  print(j)
+
+#Task3
+n=int(input())
+lst=list()
+summ=0
+for i in range(n):
+  z=int(input())
+  lst.append(z)
+p=int(input())
+q=int(input())
+x=0
+for j in lst:
+  if x>=p-1 and x<=q-11:
+    summ+=j
+  x+=1
+print(summ)
+
+#Task4
+def Artek(s,n):
+  lst=list()
+  answer=''
+  for i in s.split(','):
+    if i[-1] =='5':
+        lst.append(i.split(' ')[1])
+  lst.sort()
+  for j in lst[0:n]:
+      answer+=j+', '
+  print(answer[0:len(answer)-2])
+
+#Task5
+def password_level(s):
+  answer=''
+  lst=list('@#$%&*().,-_+')
+  if len(s)<8:
+    print("Недопустимый пароль")
+  elif s.isdigit() or (s.isalpha() and (s.islower() or s.isupper())):
+    print("Ненадежный пароль")
+  elif s.isalpha() or (s.islower() or s.isupper()):
+    print("Слабый пароль")
+  else:
+    for i in lst:
+      for j in list(s):
+        if i == j:
+            answer = "Надежный пароль"
+            break
+    print(answer)
