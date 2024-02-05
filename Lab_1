@@ -1,0 +1,50 @@
+class Pupa:
+  def _init_(self):
+    self.count = 0
+  
+  def do_work(self, spisok1, spisok2):
+    for i in range(len(spisok1)):
+      for j in range(len(spisok2)):
+        if i == j:
+          spisok1[i]=spisok1[i]+spisok2[j]
+    self.count = len(spisok1)
+    print('Работа Пупы:', spisok1)
+    return spisok1
+
+  def take_salary(self):
+    salary = 3+self.count*1,5
+    print('Зарплата Пупы:', salary)
+    return salary
+
+class Lupa:
+  def _init_(self):
+    self.count = 0
+
+  def do_work(self, spisok1, spisok2):
+    for i in range(len(spisok1)):
+      for j in range(len(spisok2)):
+        if i == j:
+          spisok1[i]=spisok1[i]-spisok2[j]
+    self.count = len(spisok1)
+    print('Работа Лупы:', spisok1)
+    return spisok1
+
+  def take_salary(self):
+      salary = 3+self.count*1,5
+      print('Зарплата Лупы:', salary)
+      return salary
+
+class Accountant:
+  def give_salary(self, worker):
+    return worker.take_salary()
+
+pupa = Pupa()
+pupa.do_work([1,2,3],[4,5,6])
+pupa.take_salary()
+lupa=Lupa()
+lupa.do_work([1,2,3],[4,5,6])
+lupa.take_salary
+
+acc = Accountant()
+acc.give_salary(pupa)
+acc.give_salary(lupa)
